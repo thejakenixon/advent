@@ -1,33 +1,24 @@
 data = open("data.txt","r")
-dataArray = data.read().splitlines()
+dataList = data.read().splitlines()
 
-height = len(dataArray)
-width = len(dataArray[0])
+height = len(dataList)
+width = len(dataList[0])
 down = 1
-right = 1
+right = 3
 treecount = 0
-iteration = 0
 
-xindex = 0
-yindex = 0
+x = 0
+y = 0
 
-for x in range(int(round(height/down))):
-    iteration += 1
-    xindex += right 
-    yindex = down*(iteration)
+def treeCount(down,right)
+while (y <= height-down-1):
+    x += right
+    y += down
 
-    print(xindex,'x')
-    #print(yindex,'y')
-    if xindex >= width:
-        xindex -= 30
-        print('aaaaaa')
+    if x >= (width-right):
+        x -= width
 
-    #print(dataArray[yindex][xindex],'here')
-    if(dataArray[yindex][xindex])=='#':
+    if(dataList[y][x])=='#':
         treecount +=1
-    #print(iteration,'it')
-    print(width,'width')
-    #print(treecount,'trees')
-#    print(type(xindex))
-#    print(type(width))
-    input('')
+
+print(treecount,'trees')
