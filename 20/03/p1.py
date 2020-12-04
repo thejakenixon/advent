@@ -3,22 +3,23 @@ dataList = data.read().splitlines()
 
 height = len(dataList)
 width = len(dataList[0])
-down = 1
-right = 3
+down = 2
+right = 1
 treecount = 0
+iteration = 0
 
-x = 0
-y = 0
+xindex = 0
+yindex = 0
 
-def treeCount(down,right)
-while (y <= height-down-1):
-    x += right
-    y += down
+for x in range(height):
+    iteration += 1
+    xindex += right 
+    yindex = down*(iteration)
 
-    if x >= (width-right):
-        x -= width
+    if xindex >= width:
+        xindex -= width
 
-    if(dataList[y][x])=='#':
+#    print(dataList[yindex][xindex],'here')
+    if(dataList[yindex][xindex])=='#':
         treecount +=1
-
-print(treecount,'trees')
+    print(treecount,'trees')
